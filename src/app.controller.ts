@@ -14,8 +14,4 @@ export class AppController {
   ): any {
     return this.appService.getBypass(page, pagesize, platform, s_locale);
   }
-  @Get('/test')
-  getTest(): string {
-    return this.appService.getTest();
-  }
 }
