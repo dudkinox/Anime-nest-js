@@ -74,6 +74,6 @@ export class CategoryService {
         }
       });
 
-    return data;
+    return data[0];
   }
 }
