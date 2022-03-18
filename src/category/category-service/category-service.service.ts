@@ -24,6 +24,7 @@ export class CategoryService {
     s_locale: string,
   ): Promise<any> {
     const result = { category: [] };
+    const data = [];
     await this.httpService
       .get(
         `https://api.bilibili.tv/intl/gateway/web/v2/ogv/index/items?page=${page}&pagesize=${pagesize}&platform=${platform}&s_locale=${s_locale}`,
@@ -31,68 +32,48 @@ export class CategoryService {
       .forEach((item) => {
         switch (Number(style)) {
           case CategoryEnum.Yaoi:
-            result.category.push(
-              this.checkCategory(item, result.category, 'ยาโอย'),
-            );
+            data.push(this.checkCategory(item, result.category, 'ยาโอย'));
             break;
           case CategoryEnum.Phantasy:
-            result.category.push(
-              this.checkCategory(item, result.category, 'แฟนตาซี'),
-            );
+            data.push(this.checkCategory(item, result.category, 'แฟนตาซี'));
             break;
           case CategoryEnum.Drama:
-            result.category.push(
-              this.checkCategory(item, result.category, 'ดราม่า'),
-            );
+            data.push(this.checkCategory(item, result.category, 'ดราม่า'));
             break;
           case CategoryEnum.Action:
-            result.category.push(
-              this.checkCategory(item, result.category, 'ต่อสู้'),
-            );
+            data.push(this.checkCategory(item, result.category, 'ต่อสู้'));
             break;
           case CategoryEnum.Romantic:
-            result.category.push(
-              this.checkCategory(item, result.category, 'โรแมนติก'),
-            );
+            data.push(this.checkCategory(item, result.category, 'โรแมนติก'));
             break;
           case CategoryEnum.SciFi:
-            result.category.push(
-              this.checkCategory(item, result.category, 'ไซ-ไฟ'),
-            );
+            data.push(this.checkCategory(item, result.category, 'ไซ-ไฟ'));
             break;
           case CategoryEnum.Avengers:
-            result.category.push(
-              this.checkCategory(item, result.category, 'ผจญภัย'),
-            );
+            data.push(this.checkCategory(item, result.category, 'ผจญภัย'));
             break;
           case CategoryEnum.History:
-            result.category.push(
+            data.push(
               this.checkCategory(item, result.category, 'ประวัติศาสตร์'),
             );
             break;
           case CategoryEnum.Comedy:
-            result.category.push(
-              this.checkCategory(item, result.category, 'ตลก'),
-            );
+            data.push(this.checkCategory(item, result.category, 'ตลก'));
             break;
           case CategoryEnum.life:
-            result.category.push(
+            data.push(
               this.checkCategory(item, result.category, 'ชีวิตประจำวัน'),
             );
             break;
           case CategoryEnum.music:
-            result.category.push(
-              this.checkCategory(item, result.category, 'ดนตรี'),
-            );
+            data.push(this.checkCategory(item, result.category, 'ดนตรี'));
             break;
           case CategoryEnum.school:
-            result.category.push(
-              this.checkCategory(item, result.category, 'โรงเรียน'),
-            );
+            data.push(this.checkCategory(item, result.category, 'โรงเรียน'));
             break;
         }
       });
 
-    return result;
+    return data;
   }
 }

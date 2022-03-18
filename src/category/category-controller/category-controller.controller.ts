@@ -1,7 +1,6 @@
 import { Get } from '@nestjs/common';
 import { Query } from '@nestjs/common';
 import { Controller } from '@nestjs/common';
-import { card } from 'api-anime-bilibilli/dist/bypass/model/BypassModel';
 import { CategoryService } from '../category-service/category-service.service';
 
 @Controller('category')
