@@ -1,4 +1,5 @@
 export enum CategoryEnum {
+  All,
   Yaoi,
   Phantasy,
   Drama,

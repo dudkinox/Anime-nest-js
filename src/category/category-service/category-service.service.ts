@@ -70,6 +70,9 @@ export class CategoryService {
           case CategoryEnum.school:
             data.push(this.checkCategory(item, result.category, 'โรงเรียน'));
             break;
+          default:
+            data.push(this.checkCategory(item, result.category, ' '));
+            break;
         }
       });
 
