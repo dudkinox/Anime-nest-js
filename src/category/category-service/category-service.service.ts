@@ -1,7 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { HttpService } from '@nestjs/axios';
 import { CategoryEnum } from 'src/enum/categoryEnum';
-import { stringify } from 'querystring';
 
 @Injectable()
 export class CategoryService {
